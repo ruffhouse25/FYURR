@@ -11,7 +11,7 @@ from models import db, Artist, Venue, Show
 # Initialize Flask app, database, and migration
 app = Flask(__name__)
 app.config.from_object('config')  # Ensure config.py has your DB URI
-db = SQLAlchemy(app)
+db.init_app(app)
 migrate = Migrate(app, db)
 
 
